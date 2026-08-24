@@ -60,23 +60,22 @@ The projects featured here were conceptualized, engineered, and deployed by unde
 | **19** | **NEO Alert Tracker** | Team 12 | NASA NeoWs API • Hazard Classifier | 🟡 *Repo Build* | [Code ↗](https://github.com/software-engineering-futminna/near-earth-object-alert-app-team-12) |
 | **20** | **Flight Radar Lite** | Flight Radars | OpenSky API • Telemetry State Machine | 🟡 *Repo Build* | [Code ↗](https://github.com/software-engineering-futminna/flight-radar-lite-flight-radars-) |
 
----
+## 🎯 Pedagogical Pillars & Academic Scope
 
-## 🎯 Pedagogical Pillars
+The projects featured in this showcase represent foundational undergraduate coursework in **FUTM-SWE-221 (Individual Software Development Project I)**. They are student learning projects designed to build practical confidence in core web fundamentals rather than enterprise-ready production platforms.
 
-Students were assessed against industry-grade software engineering competencies:
+### Key Learning Milestones:
+1. **Asynchronous API Integration & DOM Rendering**  
+   Learning how to fetch, parse, and render real-time JSON responses from third-party RESTful APIs using standard JavaScript (`fetch`, `async/await`).
 
-1. **API Integration & Asynchronous Resilience**  
-   Handling network latency, API rate limits, error status codes (`4xx`/`5xx`), and schema validation using asynchronous JavaScript (`fetch`, `async/await`, Promises).
+2. **Client-Side Persistence & Basic Usability**  
+   Exploring browser-level state management (`localStorage`, session state, and lightweight PWAs) for client-side functionality.
 
-2. **Client-Side Data Persistence & Offline Usability**  
-   Managing browser persistence (`localStorage`, `IndexedDB`, Service Worker Cache API) so critical application workflows remain functional during network disruptions.
+3. **Collaborative Git & Version Control**  
+   Practicing branch creation, pull request workflows, and collaborative version control hygiene within assigned student teams.
 
-3. **Swiss Design & Accessibility Standards**  
-   Building interfaces adhering to high typographic contrast, mathematical grids, semantic HTML5 elements, and mobile touch accessibility.
-
-4. **Git Version Control & Collaborative Hygiene**  
-   Maintaining clean branch histories, pull request reviews, descriptive commit messages, and automated branch protection rules.
+> [!NOTE]
+> **Academic Context Disclaimer:** These applications were designed and engineered by undergraduate students as exploratory laboratory assignments. While students aimed for high quality and practical design, they represent developmental academic milestones and are not expected to cover every production-grade security, cross-browser, or enterprise compliance standard.
 
 ---
 
