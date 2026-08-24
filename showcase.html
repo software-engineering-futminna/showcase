@@ -1,0 +1,2282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SWE-MLAB Academic Showcase — FUTM-SWE-221: Individual Software Development Project I | FUTMinna</title>
+  <meta name="description" content="Official academic showcase of undergraduate software engineering project submissions for FUTM-SWE-221: Individual Software Development Project I (Second Semester) at Federal University of Technology Minna.">
+  <meta name="theme-color" content="#0B132B">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="SWE-MLAB Academic Showcase — FUTM-SWE-221 | FUTMinna">
+  <meta property="og:description" content="Explore live web applications, open-source repositories, and student teams for FUTM-SWE-221 (Individual Software Development Project I).">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       SWISS DESIGN SYSTEM & SWE-MLAB INSTITUTIONAL PALETTE
+       ========================================================================== */
+    :root {
+      /* Institutional Navy */
+      --fut-navy: #0B132B;
+      --fut-navy-light: #1C2541;
+      --fut-navy-dark: #070D1E;
+      
+      /* SWE-MLAB Signature Blue Accents */
+      --swem-blue: #3B7DD8;
+      --swem-blue-hover: #2F68B8;
+      --swem-blue-light: #EFF6FF;
+      --swem-blue-border: #BFDBFE;
+      --swem-blue-deep: #1E40AF;
+      
+      /* SWE-MLAB Green Accents */
+      --swem-green: #10B981;
+      --swem-green-deep: #065F46;
+      --swem-green-light: #ECFDF5;
+      --swem-green-border: #A7F3D0;
+      
+      /* Swiss Monochromatic Palette */
+      --bg-canvas: #F8F9FA;
+      --bg-surface: #FFFFFF;
+      --bg-surface-alt: #F1F3F5;
+      --bg-surface-card: #FFFFFF;
+      
+      --ink-primary: #0F172A;
+      --ink-secondary: #334155;
+      --ink-muted: #64748B;
+      --ink-faint: #94A3B8;
+      
+      --line-strong: #0F172A;
+      --line-subtle: #E2E8F0;
+      --line-dark: #1E293B;
+      
+      /* Typography */
+      --font-swiss: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      
+      /* Geometry & Elevation */
+      --radius-xs: 3px;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --radius-pill: 9999px;
+      
+      --shadow-subtle: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.03);
+      --shadow-lift: 0 12px 32px -8px rgba(15, 23, 42, 0.10), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+    }
+
+    /* Global Reset & Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      background-color: var(--bg-canvas);
+    }
+
+    body {
+      font-family: var(--font-swiss);
+      color: var(--ink-primary);
+      background-color: var(--bg-canvas);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    ::selection {
+      background-color: var(--swem-blue);
+      color: #FFFFFF;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--swem-blue);
+      outline-offset: 2px;
+    }
+
+    /* Layout Containers */
+    .container {
+      width: 100%;
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding: 0 24px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .container {
+        padding: 0 32px;
+      }
+    }
+
+    /* ==========================================================================
+       TOP ACADEMIC INSTITUTION HEADER (RESPONSIVE)
+       ========================================================================== */
+    .inst-bar {
+      background: var(--fut-navy);
+      color: #FFFFFF;
+      border-bottom: 2px solid var(--swem-blue);
+      font-size: 0.76rem;
+      padding: 10px 0;
+      letter-spacing: 0.02em;
+    }
+
+    .inst-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .inst-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+    }
+
+    .inst-crest {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      background: var(--swem-blue);
+      color: #FFFFFF;
+      font-weight: 900;
+      font-size: 0.72rem;
+      border-radius: var(--radius-xs);
+      flex-shrink: 0;
+    }
+
+    .inst-tags {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: #CBD5E1;
+    }
+
+    .inst-tags span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .inst-tags span::before {
+      content: "•";
+      color: var(--swem-blue);
+    }
+
+    /* ==========================================================================
+       COURSE METADATA & HERO BANNER (SWISS POSTER AESTHETICS)
+       ========================================================================== */
+    .hero-header {
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--line-subtle);
+      padding: clamp(36px, 6vw, 64px) 0 clamp(32px, 5vw, 52px);
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    @media (min-width: 980px) {
+      .hero-grid {
+        grid-template-columns: 1.85fr 1.15fr;
+        align-items: end;
+      }
+    }
+
+    .course-badge-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .course-badge {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--swem-blue-deep);
+      background: var(--swem-blue-light);
+      padding: 4px 10px;
+      border: 1px solid var(--swem-blue-border);
+      border-radius: var(--radius-xs);
+    }
+
+    .course-term-badge {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: var(--swem-green-deep);
+      background: var(--swem-green-light);
+      padding: 4px 10px;
+      border: 1px solid var(--swem-green-border);
+      border-radius: var(--radius-xs);
+    }
+
+    h1.hero-title {
+      font-size: clamp(2.1rem, 4.5vw, 3.8rem);
+      font-weight: 900;
+      line-height: 1.06;
+      letter-spacing: -0.04em;
+      color: var(--fut-navy);
+      margin-bottom: 16px;
+    }
+
+    h1.hero-title span.accent {
+      color: var(--fut-navy);
+      text-decoration: underline;
+      text-decoration-color: var(--swem-blue);
+      text-decoration-thickness: 5px;
+      text-underline-offset: 6px;
+    }
+
+    .hero-lead {
+      font-size: clamp(0.95rem, 1.8vw, 1.12rem);
+      color: var(--ink-secondary);
+      max-width: 680px;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    /* Laboratory Telemetry Panel */
+    .metric-panel {
+      background: var(--bg-canvas);
+      border: 1.5px solid var(--line-strong);
+      padding: clamp(16px, 3vw, 24px);
+      border-radius: var(--radius-md);
+      box-shadow: 4px 4px 0 var(--line-strong);
+    }
+
+    .metric-title {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-muted);
+      font-weight: 700;
+      margin-bottom: 14px;
+      border-bottom: 1px solid var(--line-subtle);
+      padding-bottom: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .metric-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .stat-box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-num {
+      font-size: clamp(1.4rem, 2.8vw, 1.85rem);
+      font-weight: 900;
+      font-family: var(--font-mono);
+      color: var(--fut-navy);
+      line-height: 1.1;
+    }
+
+    .stat-label {
+      font-size: 0.72rem;
+      color: var(--ink-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* ==========================================================================
+       STICKY CONTROLS: SEARCH, FILTERS & VIEW MODES (RESPONSIVE)
+       ========================================================================== */
+    .control-sticky {
+      position: sticky;
+      top: 0;
+      z-index: 80;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line-subtle);
+      padding: 12px 0;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+    }
+
+    .controls-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .control-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .search-box {
+      flex: 1;
+      min-width: 220px;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 10px 14px 10px 38px;
+      font-family: var(--font-swiss);
+      font-size: 0.88rem;
+      border: 1.5px solid var(--line-subtle);
+      border-radius: var(--radius-sm);
+      background: var(--bg-surface);
+      color: var(--ink-primary);
+      transition: all 0.15s ease;
+    }
+
+    .search-input:focus {
+      border-color: var(--swem-blue);
+      box-shadow: 0 0 0 3px rgba(59, 125, 216, 0.15);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--ink-muted);
+      pointer-events: none;
+    }
+
+    .view-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-toggle {
+      background: var(--bg-surface-alt);
+      border: 1px solid var(--line-subtle);
+      padding: 7px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--ink-secondary);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+
+    .btn-toggle.active {
+      background: var(--fut-navy);
+      color: #FFFFFF;
+      border-color: var(--fut-navy);
+    }
+
+    /* Scrollable Filter Pills */
+    .filter-pills {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .filter-pills::-webkit-scrollbar { display: none; }
+
+    .pill-btn {
+      background: transparent;
+      border: 1px solid var(--line-subtle);
+      padding: 5px 12px;
+      border-radius: var(--radius-pill);
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: var(--ink-secondary);
+      white-space: nowrap;
+      transition: all 0.15s ease;
+      flex-shrink: 0;
+    }
+
+    .pill-btn:hover {
+      border-color: var(--ink-primary);
+      color: var(--ink-primary);
+    }
+
+    .pill-btn.active {
+      background: var(--swem-blue);
+      color: #FFFFFF;
+      border-color: var(--swem-blue);
+    }
+
+    .pill-count {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      opacity: 0.85;
+      margin-left: 3px;
+    }
+
+    /* ==========================================================================
+       SHOWCASE GRID & CARD RESPONSIVENESS
+       ========================================================================== */
+    .showcase-section {
+      padding: clamp(24px, 4vw, 48px) 0 clamp(48px, 8vw, 96px);
+    }
+
+    .results-summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--ink-muted);
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .grid-view {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 640px) {
+      .grid-view {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+    }
+
+    @media (min-width: 1040px) {
+      .grid-view {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+      }
+    }
+
+    /* Card Layout */
+    .proj-card {
+      background: var(--bg-surface);
+      border: 1.5px solid var(--line-subtle);
+      border-radius: var(--radius-md);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .proj-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lift);
+      border-color: var(--ink-primary);
+    }
+
+    .card-top {
+      padding: 20px 20px 16px;
+      border-bottom: 1px solid var(--line-subtle);
+    }
+
+    .card-meta-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .card-index {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--ink-muted);
+    }
+
+    .card-category-badge {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 2px 7px;
+      border-radius: var(--radius-xs);
+      background: var(--bg-surface-alt);
+      color: var(--ink-secondary);
+      border: 1px solid var(--line-subtle);
+    }
+
+    .card-title {
+      font-size: clamp(1.15rem, 2.2vw, 1.35rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--fut-navy);
+      margin-bottom: 4px;
+      line-height: 1.2;
+    }
+
+    .card-team {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--swem-green-deep);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .pulse-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--swem-green);
+      display: inline-block;
+      box-shadow: 0 0 0 2px var(--swem-green-light);
+      flex-shrink: 0;
+    }
+
+    .pulse-dot.offline-dot {
+      background: var(--swem-blue);
+      box-shadow: 0 0 0 2px var(--swem-blue-light);
+    }
+
+    .card-abstract {
+      font-size: 0.84rem;
+      color: var(--ink-secondary);
+      line-height: 1.55;
+      margin-bottom: 12px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* Card Body: Member Rosters (Minimal Clean Line Design) */
+    .card-body {
+      padding: 16px 20px;
+      background: #FAFAFC;
+      border-bottom: 1px solid var(--line-subtle);
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-muted);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .member-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      font-size: 0.78rem;
+      max-height: 130px;
+      overflow-y: auto;
+      padding-right: 2px;
+    }
+
+    .member-item {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 3px 0;
+      border-bottom: 1px dotted rgba(226, 232, 240, 0.9);
+    }
+
+    .member-item:last-child {
+      border-bottom: none;
+    }
+
+    .member-name {
+      font-weight: 500;
+      color: var(--ink-primary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 0.8rem;
+    }
+
+    .member-matric {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--ink-muted);
+      flex-shrink: 0;
+    }
+
+    /* Tech Tags */
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .tech-pill {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      padding: 2px 6px;
+      border-radius: 3px;
+      background: var(--bg-surface);
+      border: 1px solid var(--line-subtle);
+      color: var(--ink-secondary);
+    }
+
+    /* Card Footer Buttons */
+    .card-footer {
+      padding: 14px 20px;
+      background: var(--bg-surface);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .btn {
+      font-weight: 600;
+      font-size: 0.8rem;
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-live {
+      background: var(--fut-navy);
+      color: #FFFFFF;
+      flex: 1;
+    }
+
+    .btn-live:hover {
+      background: var(--fut-navy-light);
+      transform: translateY(-1px);
+    }
+
+    .btn-repo {
+      background: var(--bg-surface);
+      border-color: var(--line-subtle);
+      color: var(--ink-primary);
+    }
+
+    .btn-repo:hover {
+      background: var(--bg-surface-alt);
+      border-color: var(--ink-primary);
+    }
+
+    .btn-detail {
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--ink-muted);
+      padding: 8px 8px;
+    }
+
+    .btn-detail:hover {
+      color: var(--fut-navy);
+      background: var(--bg-surface-alt);
+    }
+
+    /* ==========================================================================
+       TABULAR VIEW (RESPONSIVE OVERFLOW)
+       ========================================================================== */
+    .table-view-wrap {
+      display: none;
+      background: var(--bg-surface);
+      border: 1.5px solid var(--line-subtle);
+      border-radius: var(--radius-md);
+      overflow-x: auto;
+      box-shadow: var(--shadow-subtle);
+      -webkit-overflow-scrolling: touch;
+    }
+
+    table.academic-table {
+      width: 100%;
+      min-width: 760px;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.84rem;
+    }
+
+    table.academic-table th {
+      background: var(--fut-navy);
+      color: #FFFFFF;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 12px 16px;
+      border-right: 1px solid var(--line-dark);
+    }
+
+    table.academic-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line-subtle);
+      border-right: 1px solid var(--line-subtle);
+      vertical-align: top;
+    }
+
+    table.academic-table tr:hover td {
+      background: #F8FAFC;
+    }
+
+    /* ==========================================================================
+       ACADEMIC DOSSIER MODAL (RESPONSIVE)
+       ========================================================================== */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(11, 19, 43, 0.75);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-window {
+      background: var(--bg-surface);
+      width: 100%;
+      max-width: 740px;
+      max-height: 90vh;
+      border-radius: var(--radius-md);
+      border: 2px solid var(--fut-navy);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      animation: modalPop 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes modalPop {
+      from { transform: scale(0.96); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-header {
+      padding: 18px 22px;
+      background: var(--fut-navy);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid var(--swem-blue);
+    }
+
+    .modal-header-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .modal-close {
+      background: transparent;
+      border: none;
+      color: #CBD5E1;
+      font-size: 1.6rem;
+      cursor: pointer;
+      line-height: 1;
+      padding: 4px;
+    }
+
+    .modal-close:hover {
+      color: #FFFFFF;
+    }
+
+    .modal-body {
+      padding: 22px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .modal-section h4 {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-muted);
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--line-subtle);
+      padding-bottom: 4px;
+    }
+
+    .modal-section p {
+      font-size: 0.9rem;
+      color: var(--ink-secondary);
+      line-height: 1.6;
+    }
+
+    .modal-footer {
+      padding: 14px 22px;
+      background: var(--bg-surface-alt);
+      border-top: 1px solid var(--line-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* ==========================================================================
+       INSTITUTIONAL CURRICULUM FOOTER
+       ========================================================================== */
+    .academic-info-strip {
+      background: var(--fut-navy);
+      color: #FFFFFF;
+      padding: clamp(36px, 6vw, 64px) 0;
+      border-top: 2px solid var(--swem-blue);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    @media (min-width: 860px) {
+      .info-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 36px;
+      }
+    }
+
+    .info-card {
+      border-left: 2px solid var(--swem-blue);
+      padding-left: 18px;
+    }
+
+    .info-card h3 {
+      font-size: 1.08rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #FFFFFF;
+    }
+
+    .info-card p {
+      font-size: 0.84rem;
+      color: #CBD5E1;
+      line-height: 1.6;
+    }
+
+    footer.site-footer {
+      background: var(--fut-navy-dark);
+      color: #94A3B8;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 36px 0 24px;
+      font-size: 0.8rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .footer-inner {
+        flex-direction: row;
+        text-align: left;
+      }
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      font-size: 0.78rem;
+      color: #CBD5E1;
+    }
+
+    .footer-links a:hover {
+      color: var(--swem-blue);
+      text-decoration: underline;
+    }
+
+    /* No Results Fallback */
+    .no-results {
+      display: none;
+      grid-column: 1 / -1;
+      padding: 48px 16px;
+      text-align: center;
+      background: var(--bg-surface);
+      border: 1px dashed var(--line-subtle);
+      border-radius: var(--radius-md);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Institutional Header (FUTMinna / SICT) -->
+  <div class="inst-bar">
+    <div class="container inst-inner">
+      <div class="inst-brand">
+        <span class="inst-crest">F</span>
+        <span>Federal University of Technology Minna • School of Information & Communication Technology (SICT)</span>
+      </div>
+      <div class="inst-tags">
+        <span>Department of Software Engineering</span>
+        <span>FUTM-SWE-221</span>
+        <span>Second Semester</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Academic Course & Laboratory Hero Header -->
+  <header class="hero-header">
+    <div class="container hero-grid">
+      <div>
+        <div class="course-badge-row">
+          <span class="course-badge">FUTM-SWE-221</span>
+          <span class="course-term-badge">Second Semester</span>
+          <span class="course-badge" style="background: var(--bg-surface-alt); border-color: var(--line-subtle); color: var(--ink-secondary);">Student Showcase</span>
+        </div>
+        <h1 class="hero-title">
+          Individual Software Development Project I.<br>
+          <span class="accent">SWE-MLAB Showcase.</span>
+        </h1>
+        <p class="hero-lead">
+          Official academic index and live project catalog for <strong>FUTM-SWE-221 (Individual Software Development Project I)</strong>. Features production web applications, open REST API integrations, and collaborative engineering portfolios built by undergraduate students at FUTMinna.
+        </p>
+      </div>
+
+      <div class="metric-panel">
+        <div class="metric-title">
+          <span>Course Telemetry</span>
+          <span>FUTM-SWE-221</span>
+        </div>
+        <div class="metric-stats">
+          <div class="stat-box">
+            <span class="stat-num" id="stat-total">20</span>
+            <span class="stat-label">Student Teams</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">Open Source</span>
+          </div>
+          <div class="stat-box" style="margin-top: 6px;">
+            <span class="stat-num">75+</span>
+            <span class="stat-label">Enrolled Students</span>
+          </div>
+          <div class="stat-box" style="margin-top: 6px;">
+            <span class="stat-num">16</span>
+            <span class="stat-label">Live Deployments</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Controls: Search, Category Filters, Responsive Toggle -->
+  <nav class="control-sticky" aria-label="Showcase Controls">
+    <div class="container controls-wrapper">
+      <div class="control-top">
+        <div class="search-box">
+          <svg class="search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="searchInput" class="search-input" placeholder="Search by project, team, student name, matric no, or tech..." aria-label="Search Projects">
+        </div>
+
+        <div class="view-actions">
+          <button class="btn-toggle active" id="btnGridView" onclick="setViewMode('grid')" aria-label="Grid View">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+            Grid
+          </button>
+          <button class="btn-toggle" id="btnTableView" onclick="setViewMode('table')" aria-label="Table View">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+            Table
+          </button>
+        </div>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="filter-pills" id="categoryPills" role="tablist">
+        <button class="pill-btn active" data-category="all" onclick="filterCategory('all', this)">All Projects <span class="pill-count">(20)</span></button>
+        <button class="pill-btn" data-category="space" onclick="filterCategory('space', this)">Space & Science</button>
+        <button class="pill-btn" data-category="fintech" onclick="filterCategory('fintech', this)">FinTech & Currency</button>
+        <button class="pill-btn" data-category="media" onclick="filterCategory('media', this)">Media & Audio</button>
+        <button class="pill-btn" data-category="edtech" onclick="filterCategory('edtech', this)">EdTech & Geography</button>
+        <button class="pill-btn" data-category="health" onclick="filterCategory('health', this)">Health & Environment</button>
+        <button class="pill-btn" data-category="utility" onclick="filterCategory('utility', this)">Travel & Utilities</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Showcase Content Area -->
+  <main class="container showcase-section">
+    <div class="results-summary">
+      <span id="resultsCount">Showing 20 of 20 projects</span>
+      <span>FUTM-SWE-221 • Second Semester Laboratory Projects</span>
+    </div>
+
+    <!-- Responsive Grid -->
+    <div class="grid-view" id="projectGrid">
+      <!-- Injected via JavaScript -->
+    </div>
+
+    <!-- Responsive Table -->
+    <div class="table-view-wrap" id="projectTableWrap">
+      <table class="academic-table" id="projectTable">
+        <thead>
+          <tr>
+            <th>Index</th>
+            <th>Project Title</th>
+            <th>Team & Members</th>
+            <th>Category</th>
+            <th>Primary API & Stack</th>
+            <th>Deliverables</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <!-- Injected via JavaScript -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Empty State -->
+    <div class="no-results" id="noResults">
+      <h3 style="font-size: 1.15rem; color: var(--fut-navy); margin-bottom: 6px;">No projects matched your criteria</h3>
+      <p style="font-size: 0.86rem; color: var(--ink-muted);">Try adjusting your search terms or selecting another category.</p>
+    </div>
+  </main>
+
+  <!-- Academic Dossier Modal -->
+  <div class="modal-backdrop" id="abstractModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="closeModalOnBackdrop(event)">
+    <div class="modal-window">
+      <div class="modal-header">
+        <div class="modal-header-meta">
+          <span style="font-family: var(--font-mono); font-size: 0.72rem; color: #93C5FD; letter-spacing: 0.05em;" id="modalTeam">FUTM-SWE-221 DOSSIER</span>
+          <h2 style="font-size: 1.3rem; font-weight: 800;" id="modalTitle">Project Title</h2>
+        </div>
+        <button class="modal-close" onclick="closeModal()" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body" id="modalContent">
+        <!-- Injected via JavaScript -->
+      </div>
+      <div class="modal-footer">
+        <div id="modalLinks" style="display: flex; gap: 8px; flex-wrap: wrap;"></div>
+        <button class="btn btn-repo" onclick="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Institutional Pillars -->
+  <section class="academic-info-strip">
+    <div class="container info-grid">
+      <div class="info-card">
+        <h3>FUTM-SWE-221 Curriculum</h3>
+        <p>Individual Software Development Project I trains second-semester software engineering students in API consumer architecture, asynchronous data flow, client-side resilience, Git collaboration, and cloud-native deployment.</p>
+      </div>
+      <div class="info-card">
+        <h3>SWE-MLAB Integration</h3>
+        <p>All projects were developed and graded through the SWE-MLAB platform, ensuring uniform unit testing, branch protection rules, and continuous delivery across the undergraduate cohort.</p>
+      </div>
+      <div class="info-card">
+        <h3>Institutional Repositories</h3>
+        <p>Student source code is preserved in the official <code>software-engineering-futminna</code> GitHub organization for open peer review, academic auditing, and portfolio reference.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p style="font-weight: 700; color: #FFFFFF; margin-bottom: 2px;">FUTM-SWE-221: Individual Software Development Project I (Second Semester)</p>
+        <p>Department of Software Engineering • Federal University of Technology Minna</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/software-engineering-futminna" target="_blank" rel="noreferrer">GitHub Org ↗</a>
+        <a href="#top">Back to Top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Logic & Dataset Script -->
+  <script>
+    const projectsData = [
+  {
+    "id": 5,
+    "index": "01",
+    "title": "NaijaWeather",
+    "team": "Weather Wizards",
+    "category": "utility",
+    "categoryLabel": "Utilities & Meteorology",
+    "api": "Open-Meteo / Weather API",
+    "tech": [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Netlify"
+    ],
+    "liveUrl": "https://group4liveweather.netlify.app/",
+    "repoUrl": "https://github.com/software-engineering-futminna/naijaweather-----weather-wizards",
+    "hasLive": true,
+    "members": [
+      {
+        "name": "MoTaC1",
+        "matric": "2024/1/96585SW",
+        "username": "MoTaC1",
+        "role": "lead"
+      },
+      {
+        "name": "abdulhameedowojori-droid",
+        "matric": "OWOJORIAAUGT3430",
+        "username": "abdulhameedowojori-droid",
+        "role": "member"
+      },
+      {
+        "name": "Absadkhamis",
+        "matric": "2024/1/95779SW",
+        "username": "Absadkhamis",
+        "role": "member"
+      },
+      {
+        "name": "adeniyisougt2484-cloud",
+        "matric": "ADENIYISOUGT2484",
+        "username": "adeniyisougt2484-cloud",
+        "role": "member"
+      }
+    ],
+    "abstract": "Build a weather application that allows users to search for any Nigerian city and view a 7-day weather forecast including temperature, humidity, wind speed, and rain probability. The app should present data in a clear, visual format suitable for everyday users."
+  },
+  {
+    "id": 6,
+    "index": "02",
+    "title": "Country Flag Quiz",
+    "team": "Globe explorers",
+    "category": "edtech",
+    "categoryLabel": "EdTech & Geography",
+    "api": "REST Countries API",
+    "tech": [
+      "HTML5 Canvas",
+      "CSS3",
+      "JavaScript Game Loop",
+      "LocalStorage"
+    ],
+    "liveUrl": "https://maryam045.github.io/country-flag-quiz-game/",
+    "repoUrl": "https://github.com/software-engineering-futminna/country-flag-quiz-globe-explorers",
+    "hasLive": true,
+    "members": [
+      {
+        "name": "maryam045",
+        "matric": "2024/1/101032SW",
+        "username": "maryam045",
+        "role": "lead"
+      },
+      {
+        "name": "williamsoche2025",
+        "matric": "2024/1/97533SW",
+        "username": "williamsoche2025",
+        "role": "member"
+      },
+      {
+        "name": "annie510",
+        "matric": "2024/1/96492SW",
+        "username": "annie510",
+        "role": "member"
+      },
+      {
+        "name": "Ayubaolaore",
+        "matric": "2025/2/106563SW",
+        "username": "Ayubaolaore",
+        "role": "member"
+      },
+      {
+        "name": "davidpgugt1954-a11y",
+        "matric": "DAVIDPGUGT1954",
+        "username": "davidpgugt1954-a11y",
+        "role": "member"
+      }
+    ],
+    "abstract": "Build an interactive flag identification quiz game. The app fetches country data and flags from the REST Countries API and presents players with a flag image alongside four multiple-choice country name options. Players race against a timer and accumulate a score across rounds."
+  },
+  {
+    "id": 9,
+    "index": "03",
+    "title": "Air Quality Index Monitor",
+    "team": "AQIM (Team 5)",
+    "category": "health",
+    "categoryLabel": "Health & Environment",
+    "api": "OpenAQ / Air Quality API",
+    "tech": [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Netlify"
+    ],
+    "liveUrl": "https://aqmi.netlify.app/",
+    "repoUrl": "https://github.com/software-engineering-futminna/air-quality-index-monitor-aqim-team-5",
+    "hasLive": true,
+    "members": [
+      {
+        "name": "ojiakubrightprincewill-dev",
+        "matric": "OJIAKUBPUGT3433",
+        "username": "ojiakubrightprincewill-dev",
+        "role": "member"
+      },
+      {
+        "name": "Binwaqos",
+        "matric": "2024/1/95714SW",
+        "username": "Binwaqos",
+        "role": "lead"
+      },
+      {
+        "name": "wisdom-max-web",
+        "matric": "2024/1/96314SW",
+        "username": "wisdom-max-web",
+        "role": "member"
+      }
+    ],
+    "abstract": "Build an air quality monitoring dashboard that pulls real measurement data from the OpenAQ API. Users can search for a city or country and view PM2.5, PM10, NO2, and CO pollutant readings on a time-series chart. A health advisory section interprets AQI values with colour-coded risk levels."
+  },
+  {
+    "id": 10,
+    "index": "04",
+    "title": "Currency Converter",
+    "team": "Currencyconverter",
+    "category": "fintech",
+    "categoryLabel": "FinTech & Utilities",
+    "api": "ExchangeRate-API",
+    "tech": [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Clipboard API",
+      "LocalStorage"
+    ],
+    "liveUrl": "https://balaadugt1959-lab.github.io/Currencyconverter/",
+    "repoUrl": "https://github.com/Taiwrash/currency-converter-currencyconverter",
+    "hasLive": true,
+    "members": [
+      {
+        "name": "balaadugt1959-lab",
+        "matric": "2024/1/96394SW",
+        "username": "balaadugt1959-lab",
+        "role": "lead"
+      },
+      {
+        "name": "Anyamutaku Chibugo Stephinie",
+        "matric": "2024/1/97445SW",
+        "username": "chibugo389",
+        "role": "member"
+      },
+      {
+        "name": "Suleiman Aisha Idris",
+        "matric": "2024/1/97224SW",
+        "username": "Aishasuleiman102",
+        "role": "member"
+      },
+      {
+        "name": "GAZALIKHALID",
+        "matric": "2024/1/96303SW",
+        "username": "GAZALIKHALID",
+        "role": "member"
+      }
+    ],
+    "abstract": "Build a currency conversion tool that lets users convert any amount between two selected currencies using live exchange rates. Display a rate comparison chart for five major currencies against NGN and include a swap button to reverse the conversion direction."
+  },
+  {
+    "id": 12,
+    "index": "05",
+    "title": "Crypto Price Tracker",
+    "team": "BlockPulse",
+    "category": "fintech",
+    "categoryLabel": "FinTech & Analytics",
+    "api": "CoinGecko / Market API",
+    "tech": [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "SVG Sparklines",
+      "LocalStorage"
+    ],
+    "liveUrl": "https://cryptopricetracker-eight.vercel.app/",
+    "repoUrl": "https://github.com/Taiwrash/-crypto-price-tracker-blockpulse",
+    "hasLive": true,
+    "members": [
+      {
+        "name": "BIGHUNCHO-hub",
+        "matric": "2024/1/99179SW",
+        "username": "BIGHUNCHO-hub",
+        "role": "lead"
+      },
+      {
+        "name": "Usman2618",
+        "matric": "USMANUGUGT2618",
+        "username": "Usman2618",
+        "role": "member"
+      },
+      {
+        "name": "Raihanatu Ovayioza Nuhu",
+        "matric": "2024/1/95685SW",
+        "username": "Raihanatu-Nuhu",
+        "role": "member"
+      }
+    ],
+    "abstract": "Build a cryptocurrency price tracker that displays the top 20 cryptocurrencies by market cap. Users can search for specific coins, view 24-hour price changes with colour coding, and mark favourites. Data auto-refreshes every 60 seconds with a visible countdown."
+  },
+  {
+    "id": 13,
+    "index": "06",
+    "title": "ISS Tracker and Orbit Map",
+    "team": "Group 9",
+    "category": "space",
+    "categoryLabel": "Space & Geolocation",
+    "api": "Open Notify ISS API",
+    "tech": [
+      "Leaflet.js",
+      "HTML5 Geolocation",
+      "JavaScript",
+      "CSS3",
+      "GitHub Pages"
+    ],
+    "liveUrl": "https://lavida07-web.github.io/ISS-Tracker-and-Orbit-Map/",
+    "repoUrl": "https://github.com/software-engineering-futminna/iss-tracker-and-orbit-map-group-9",
+    "hasLive": true,
+    "members": [
+      {
+        "name": "Lavida07-web",
+        "matric": "2024/1/96497SW",
+        "username": "Lavida07-web",
+        "role": "lead"
+      },
+      {
+        "name": "Charles Miracle Onyekachuwku",
+        "matric": "2024/1/97889SW",
+        "username": "Miley-kc",
+        "role": "member"
+      },
+      {
+        "name": "123goodluck-stack",
+        "matric": "OMIDIJIGIUGT666",
+        "username": "123goodluck-stack",
+        "role": "member"
+      },
+      {
+        "name": "olumidegideon",
+        "matric": "2024/1/100713SW",
+        "username": "olumidegideon",
+        "role": "member"
+      }
+    ],
+    "abstract": "Build a real-time International Space Station tracker. The app polls the Open Notify API every 5 seconds and plots the ISS position on a world map using Leaflet.js. It also displays the current crew aboard and shows a trail of the last 10 recorded positions."
+  },
+  {
+    "id": 14,
+    "index": "07",
+    "title": "Astronomy Picture of the Day",
+    "team": "AstroTech",
+    "category": "space",
+    "categoryLabel": "Space & Science",
+    "api": "NASA APOD API",
+    "tech": [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "NASA API",
+      "Netlify"
+    ],
+    "liveUrl": "https://nasaastronomypictureoftheday.netlify.app/",
+    "repoUrl": "https://github.com/software-engineering-futminna/astronomy-picture-of-the-day-astrotech",
+    "hasLive": true,
+    "members": [
+      {
+        "name": "alabisamuel350",
+        "matric": "2024/1/95289SW",
+        "username": "alabisamuel350",
+        "role": "lead"
+      },
+      {
+        "name": "ugt1944",
+        "matric": "2024/1/95823SW",
+        "username": "ugt1944",
+        "role": "member"
+      },
+      {
+        "name": "chukwuonuteugt3424-arch",
+        "matric": "2024/1/96319SW",
+        "username": "chukwuonuteugt3424-arch",
+        "role": "member"
+      }
+    ],
+    "abstract": "Description:\nBuild a space media viewer that fetches NASA's Astronomy Picture of the Day. Users can browse historical APODs using a date picker, save favourites to a local gallery, and view both image and video entries. A free API key is available at api.nasa.gov."
+  },
+  {
+    "id": 15,
+    "index": "08",
+    "title": "Mars Rover Photo Gallery",
+    "team": "Team rover",
+    "category": "space",
+    "categoryLabel": "Space & Robotics",
+    "api": "NASA Images & Video Library API",
+    "tech": [
+      "Next.js 15",
+      "TypeScript",
+      "Tailwind CSS",
+      "ISR Caching",
+      "Bun"
+    ],
+    "liveUrl": "https://mars-rover-photo-gallery-team-rover-omega.vercel.app/",
+    "repoUrl": "https://github.com/Taiwrash/mars-rover-photo-gallery-team-rover-",
+    "hasLive": true,
+    "members": [
+      {
+        "name": "mansurgupa",
+        "matric": "2024/1/95699SW",
+        "username": "mansurgupa",
+        "role": "lead"
+      },
+      {
+        "name": "ogbonnaciugt2613-tech",
+        "matric": "2024/1/95833sw",
+        "username": "ogbonnaciugt2613-tech",
+        "role": "member"
+      },
+      {
+        "name": "kenechukwukamsi",
+        "matric": "2024/1/98794SW",
+        "username": "kenechukwukamsi",
+        "role": "member"
+      }
+    ],
+    "abstract": "uild a photo gallery app that streams images taken by NASA's Mars rovers. Users can select a rover (Curiosity, Opportunity, Spirit), filter photos by camera type and Martian sol (day), and browse results in a paginated grid. A free NASA API key is required."
+  },
+  {
+    "id": 19,
+    "index": "09",
+    "title": "Book Search and Reading List",
+    "team": "Team 15",
+    "category": "edtech",
+    "categoryLabel": "EdTech & Literature",
+    "api": "Open Library API",
+    "tech": [
+      "PWA",
+      "Service Worker",
+      "Open Library API",
+      "LocalStorage"
+    ],
+    "liveUrl": "https://project-booknest-production.up.railway.app/",
+    "repoUrl": "https://github.com/software-engineering-futminna/-book-search-and-reading-list-team-15",
+    "hasLive": true,
+    "members": [
+      {
+        "name": "Jerome-Yaxs",
+        "matric": "2024/1/99318SW",
+        "username": "Jerome-Yaxs",
+        "role": "lead"
+      },
+      {
+        "name": "Abraham Alex Ojonimi",
+        "matric": "2024/1/97489SW",
+        "username": "Alex-hub00",
+        "role": "member"
+      },
+      {
+        "name": "orhangekngut1951",
+        "matric": "2024/1/100797SW",
+        "username": "orhangekngut1951",
+        "role": "member"
+      },
+      {
+        "name": "abdulymugt3437-eng",
+        "matric": "2024/1/95856SW",
+        "username": "abdulymugt3437-eng",
+        "role": "member"
+      }
+    ],
+    "abstract": "Build a book search and virtual reading list app. Users can search by title or author, view book details (cover, author, year, description), and organise books across three shelves: Want to Read, Currently Reading, and Finished. Shelf data persists in local storage."
+  },
+  {
+    "id": 20,
+    "index": "10",
+    "title": "Movie Discovery App",
+    "team": "Dreams Hack",
+    "category": "media",
+    "categoryLabel": "Media & Entertainment",
+    "api": "The Movie Database (TMDB) API",
+    "tech": [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "TMDB API",
+      "GitHub Pages"
+    ],
+    "liveUrl": "https://micah613.github.io/movie-discovery-and-watchlist-application/",
+    "repoUrl": "https://github.com/software-engineering-futminna/movie-discovery-app-dreams-hack",
+    "hasLive": true,
+    "members": [
+      {
+        "name": "Micah613",
+        "matric": "2024/1/95342SW",
+        "username": "Micah613",
+        "role": "lead"
+      },
+      {
+        "name": "adewale-cr",
+        "matric": "2024/1/98958SW",
+        "username": "adewale-cr",
+        "role": "member"
+      },
+      {
+        "name": "joiegiver",
+        "matric": "2024/1/101312SW",
+        "username": "joiegiver",
+        "role": "member"
+      }
+    ],
+    "abstract": "Build a movie discovery app using The Movie Database API. Users can browse popular, top-rated, and upcoming movies, search by title, view trailers, and add movies to a personal watchlist or watched collection. A free TMDB API key is available at themoviedb.org."
+  },
+  {
+    "id": 21,
+    "index": "11",
+    "title": "Podcast Explorer",
+    "team": "Wavecast",
+    "category": "media",
+    "categoryLabel": "Media & Audio",
+    "api": "Apple iTunes Search API",
+    "tech": [
+      "HTML5 Audio API",
+      "Modular JS",
+      "CSS Tokens",
+      "Vercel"
+    ],
+    "liveUrl": "https://wavecast-5tlc.vercel.app/",
+    "repoUrl": "https://github.com/Taiwrash/-podcast-explorer-wavecast",
+    "hasLive": true,
+    "members": [
+      {
+        "name": "xtreemtechnology",
+        "matric": "NWACHUKWUDUBT252322",
+        "username": "xtreemtechnology",
+        "role": "lead"
+      },
+      {
+        "name": "olamide818",
+        "matric": "2024/1/99546SW",
+        "username": "olamide818",
+        "role": "member"
+      },
+      {
+        "name": "murtadormugt661-cyber",
+        "matric": "2024/1/97570SW",
+        "username": "murtadormugt661-cyber",
+        "role": "member"
+      }
+    ],
+    "abstract": "Build a podcast discovery app using the iTunes Search API. Users can search for podcasts by name or topic, view show details, browse episodes, and save their favourite shows to a personal library. No API key is required for the iTunes Search API."
+  },
+  {
+    "id": 22,
+    "index": "12",
+    "title": "Dictionary and Word of the Day",
+    "team": "group 18",
+    "category": "edtech",
+    "categoryLabel": "EdTech & Linguistics",
+    "api": "Free Dictionary API",
+    "tech": [
+      "CSS Variables",
+      "Web Audio API",
+      "Vanilla JS",
+      "LocalStorage"
+    ],
+    "liveUrl": "https://thediction.netlify.app/",
+    "repoUrl": "https://github.com/software-engineering-futminna/dictionary-and-word-of-the-day-group-18",
+    "hasLive": true,
+    "members": [
+      {
+        "name": "ireobadkugt3867-max",
+        "matric": "IREOBADKUGT3867",
+        "username": "ireobadkugt3867-max",
+        "role": "lead"
+      },
+      {
+        "name": "yusufakubt252320-lgtm",
+        "matric": "YUSUFAKUBT252320",
+        "username": "yusufakubt252320-lgtm",
+        "role": "member"
+      },
+      {
+        "name": "KABEERMUDATHIR",
+        "matric": "MUDATHIRKEUGT1955",
+        "username": "KABEERMUDATHIR",
+        "role": "member"
+      },
+      {
+        "name": "Success3422",
+        "matric": "HARUNASAUGT3422",
+        "username": "Success3422",
+        "role": "member"
+      }
+    ],
+    "abstract": "Build an English dictionary app where users can search for any word and receive its definition, phonetics, part of speech, and example sentences. Include audio pronunciation playback, a personal saved words list, and a \"Word of the Day\" feature using a curated daily word."
+  },
+  {
+    "id": 23,
+    "index": "13",
+    "title": "Random Joke Generator",
+    "team": "TeamElated",
+    "category": "edtech",
+    "categoryLabel": "EdTech & Productivity",
+    "api": "JokeAPI / Programming Quotes",
+    "tech": [
+      "HTML5",
+      "CSS Custom Props",
+      "Async JS",
+      "LocalStorage"
+    ],
+    "liveUrl": "https://randomdevjokes.netlify.app/",
+    "repoUrl": "https://github.com/Taiwrash/random-joke-generator-teamelated",
+    "hasLive": true,
+    "members": [
+      {
+        "name": "ola-437EmmaNuel",
+        "matric": "2025/2/106482SW",
+        "username": "ola-437EmmaNuel",
+        "role": "lead"
+      },
+      {
+        "name": "Mubajjal2303",
+        "matric": "2024/1/95747SW",
+        "username": "Mubajjal2303",
+        "role": "member"
+      },
+      {
+        "name": "abdullateef540",
+        "matric": "2024/1/96496SW",
+        "username": "abdullateef540",
+        "role": "member"
+      },
+      {
+        "name": "Chukwudera07",
+        "matric": "2024/1/95665SW",
+        "username": "Chukwudera07",
+        "role": "member"
+      }
+    ],
+    "abstract": "Build a jokes web app where users can browse jokes by category (Programming, Pun, General, Dark), toggle a safe mode filter, and save their favourite jokes. Include a Joke of the Day cached daily and a star rating system for saved jokes."
+  },
+  {
+    "id": 11,
+    "index": "14",
+    "title": "Naira Exchange Rate Tracker",
+    "team": "NERT (Group 7)",
+    "category": "fintech",
+    "categoryLabel": "FinTech & Currency",
+    "api": "Exchange Rates / CBN Indices",
+    "tech": [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Vercel"
+    ],
+    "liveUrl": "https://naira-exchange-rate-tracker-nert-gr.vercel.app/",
+    "repoUrl": "https://github.com/Taiwrash/naira-exchange-rate-tracker-nert-group-7",
+    "hasLive": true,
+    "members": [
+      {
+        "name": "folorunsoaugt648-stack",
+        "matric": "2024/1/96941SW",
+        "username": "folorunsoaugt648-stack",
+        "role": "lead"
+      },
+      {
+        "name": "ShadyLab",
+        "matric": "2024/1/97696SW",
+        "username": "ShadyLab",
+        "role": "member"
+      },
+      {
+        "name": "ohuobaaaron",
+        "matric": "OHUOBAOAUGT651",
+        "username": "ohuobaaaron",
+        "role": "member"
+      },
+      {
+        "name": "Omorlu ugochukwu Clinton",
+        "matric": "2024/1/99957SW",
+        "username": "omorluucugt4484-alt",
+        "role": "member"
+      }
+    ],
+    "abstract": "Build a dedicated Naira exchange rate tracker that monitors the NGN rate against multiple foreign currencies. Users can view rate trends over a simulated period, set a target rate alert stored in local storage, and export the current rate table as CSV."
+  },
+  {
+    "id": 18,
+    "index": "15",
+    "title": "Airport Info Finder",
+    "team": "Team SkyQuery",
+    "category": "health",
+    "categoryLabel": "Health & Environment",
+    "api": "OpenAQ / Air Quality API",
+    "tech": [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Netlify"
+    ],
+    "liveUrl": "https://walidmadaki.github.io/airport-info-finder/",
+    "repoUrl": "https://github.com/Taiwrash/airport-info-finder-team-skyquery",
+    "hasLive": true,
+    "members": [
+      {
+        "name": "ranklyn202",
+        "matric": "2024/1/96840SW",
+        "username": "ranklyn202",
+        "role": "lead"
+      },
+      {
+        "name": "Muhammad001198",
+        "matric": "2024/1/97591SW",
+        "username": "Muhammad001198",
+        "role": "member"
+      },
+      {
+        "name": "Aishaseeyama300907",
+        "matric": "2024/1/97487SW",
+        "username": "Aishaseeyama300907",
+        "role": "member"
+      },
+      {
+        "name": "WalidMadaki",
+        "matric": "2024/1/97454SW",
+        "username": "WalidMadaki",
+        "role": "member"
+      }
+    ],
+    "abstract": "Build an airport information lookup app using the AviationStack API. Users can search for any airport by name, IATA code, or country, and view details including location, timezone, and coordinates on a Leaflet map. A free tier API key is available at aviationstack.com."
+  },
+  {
+    "id": 24,
+    "index": "16",
+    "title": "Nutrition and Calorie Tracker",
+    "team": "SWE221-GROUP 20",
+    "category": "health",
+    "categoryLabel": "Health & Nutrition",
+    "api": "Open Food Facts API",
+    "tech": [
+      "HTML5",
+      "CSS3",
+      "Vanilla JS",
+      "Barcode API",
+      "PWA",
+      "LocalStorage"
+    ],
+    "liveUrl": "https://nutriflow-prj20.netlify.app/",
+    "repoUrl": "https://github.com/Taiwrash/nutrition-and-calorie-tracker-swe221-group-20",
+    "hasLive": true,
+    "members": [
+      {
+        "name": "musaaubt253725-Ahmad",
+        "matric": "2025/2/108373",
+        "username": "musaaubt253725-Ahmad",
+        "role": "lead"
+      },
+      {
+        "name": "Titus Dickson",
+        "matric": "2024/1/96643SW",
+        "username": "Vessel-driod",
+        "role": "member"
+      },
+      {
+        "name": "Dera-ux",
+        "matric": "2024/1/99529SW",
+        "username": "Dera-ux",
+        "role": "member"
+      },
+      {
+        "name": "V7k-mR2p9QnX",
+        "matric": "2024/1/101179SW",
+        "username": "V7k-mR2p9QnX",
+        "role": "member"
+      }
+    ],
+    "abstract": "Build a nutrition and calorie tracking app using the Open Food Facts API. Users can search for any food product by name or barcode, view nutritional data (calories, protein, carbs, fat), and log daily meals. A daily calorie summary chart updates as meals are added."
+  },
+  {
+    "id": 7,
+    "index": "17",
+    "title": "Capital City Flashcard App",
+    "team": "GROUP TWO",
+    "category": "edtech",
+    "categoryLabel": "EdTech & Geography",
+    "api": "REST Countries API",
+    "tech": [
+      "HTML5",
+      "CSS 3D Transforms",
+      "JavaScript",
+      "Spaced Repetition"
+    ],
+    "liveUrl": "https://github.com/software-engineering-futminna/capital-city-flashcard-app-group-two",
+    "repoUrl": "https://github.com/software-engineering-futminna/capital-city-flashcard-app-group-two",
+    "hasLive": false,
+    "members": [
+      {
+        "name": "investormooh",
+        "matric": "2024/1/95414SW",
+        "username": "investormooh",
+        "role": "lead"
+      },
+      {
+        "name": "Meshach1230",
+        "matric": "2024/1/98720SW",
+        "username": "Meshach1230",
+        "role": "member"
+      },
+      {
+        "name": "Suleiman-Gambari",
+        "matric": "2024/1/95979SW",
+        "username": "Suleiman-Gambari",
+        "role": "member"
+      },
+      {
+        "name": "jabirtech221",
+        "matric": "2025/2/107582SW",
+        "username": "jabirtech221",
+        "role": "member"
+      },
+      {
+        "name": "danielmilliondollarteen",
+        "matric": "ICHEKUDOUGT1942",
+        "username": "danielmilliondollarteen",
+        "role": "member"
+      }
+    ],
+    "abstract": "Build a study flashcard app that helps users memorise world capital cities. Each flashcard shows a country name on one side and reveals the capital city on flip. Students can self-mark cards as \"Learned\" or \"Still Learning\" and track their study progress by region."
+  },
+  {
+    "id": 8,
+    "index": "18",
+    "title": "World Population Dashboard",
+    "team": "Group Three",
+    "category": "utility",
+    "categoryLabel": "Demographics & Analytics",
+    "api": "REST Countries / World Bank API",
+    "tech": [
+      "HTML5",
+      "CSS3",
+      "JavaScript Charts",
+      "Demographic Filters"
+    ],
+    "liveUrl": "https://github.com/Taiwrash/world-population-dashboard-group-three-",
+    "repoUrl": "https://github.com/Taiwrash/world-population-dashboard-group-three-",
+    "hasLive": false,
+    "members": [
+      {
+        "name": "Hassans09",
+        "matric": "2024/1/95645SW",
+        "username": "Hassans09",
+        "role": "lead"
+      },
+      {
+        "name": "TheBigAlhadji",
+        "matric": "2024/1/99564sw",
+        "username": "TheBigAlhadji",
+        "role": "member"
+      },
+      {
+        "name": "balogunbtugt662-cloud",
+        "matric": "2024/1/94923SW",
+        "username": "balogunbtugt662-cloud",
+        "role": "member"
+      },
+      {
+        "name": "Eneogu Ibuchukwu Elvin",
+        "matric": "2024/1/97399SW",
+        "username": "eneoguieugt2611-maker",
+        "role": "member"
+      }
+    ],
+    "abstract": "Build a data dashboard that visualises world population statistics using data from the REST Countries API. Users can explore population by region, view the top 10 most and least populous countries, and compare any two countries side by side with a chart."
+  },
+  {
+    "id": 16,
+    "index": "19",
+    "title": "Near Earth Object Alert App",
+    "team": "Team 12",
+    "category": "space",
+    "categoryLabel": "Space & Astrophysics",
+    "api": "NASA NeoWs API",
+    "tech": [
+      "NASA API",
+      "JavaScript",
+      "Hazard Tiers",
+      "Client Caching"
+    ],
+    "liveUrl": "https://github.com/Taiwrash/near-earth-object-alert-app-team-12",
+    "repoUrl": "https://github.com/Taiwrash/near-earth-object-alert-app-team-12",
+    "hasLive": false,
+    "members": [
+      {
+        "name": "Micheal Chukwuebuka Ugochukwu",
+        "matric": "2024/1/96174SW",
+        "username": "ugochukwumcugt1945-cloud",
+        "role": "lead"
+      },
+      {
+        "name": "Obama Destiny ikechukwu",
+        "matric": "2024/1/99421SW",
+        "username": "Obama63",
+        "role": "member"
+      },
+      {
+        "name": "BAYO456",
+        "matric": "2024/1/95638SW",
+        "username": "BAYO456",
+        "role": "member"
+      },
+      {
+        "name": "Abuzaid001",
+        "matric": "2024/1/96954SW",
+        "username": "Abuzaid001",
+        "role": "member"
+      }
+    ],
+    "abstract": "Build a Near Earth Object (NEO) alert dashboard using NASA's NeoWs API. Users can select a date range (up to 7 days) and view all asteroids approaching Earth during that period. Potentially hazardous objects are highlighted separately. A free NASA API key is required."
+  },
+  {
+    "id": 17,
+    "index": "20",
+    "title": "Flight Radar Lite",
+    "team": "Flight Radars",
+    "category": "utility",
+    "categoryLabel": "Travel & Aviation",
+    "api": "OpenSky / Flight Data API",
+    "tech": [
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "Live Telemetry"
+    ],
+    "liveUrl": "https://github.com/Taiwrash/flight-radar-lite-flight-radars-",
+    "repoUrl": "https://github.com/Taiwrash/flight-radar-lite-flight-radars-",
+    "hasLive": false,
+    "members": [
+      {
+        "name": "chiezecugt1956-rgb",
+        "matric": "CHIEZECUGT1956",
+        "username": "chiezecugt1956-rgb",
+        "role": "lead"
+      },
+      {
+        "name": "oloniyotougt2483-creator",
+        "matric": "2024/1/100925SW",
+        "username": "oloniyotougt2483-creator",
+        "role": "member"
+      },
+      {
+        "name": "Habib Abdulkadir",
+        "matric": "2024/1/95253SW",
+        "username": "habibabdul011",
+        "role": "member"
+      },
+      {
+        "name": "Bagudu Saidu",
+        "matric": "2024/1/100026sw",
+        "username": "baguduasugt4146-cmd",
+        "role": "member"
+      }
+    ],
+    "abstract": "Build a simplified live flight radar that displays aircraft currently in the air over a selected region using the OpenSky Network API. Aircraft positions are plotted on a Leaflet.js map. Clicking an aircraft shows its flight details including callsign, altitude, speed, and origin country."
+  }
+];
+
+    // State Variables
+    let currentCategory = "all";
+    let currentSearch = "";
+    let currentView = "grid";
+
+    // DOM Elements
+    const projectGrid = document.getElementById("projectGrid");
+    const tableBody = document.getElementById("tableBody");
+    const searchInput = document.getElementById("searchInput");
+    const resultsCount = document.getElementById("resultsCount");
+    const noResults = document.getElementById("noResults");
+    const abstractModal = document.getElementById("abstractModal");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalTeam = document.getElementById("modalTeam");
+    const modalContent = document.getElementById("modalContent");
+    const modalLinks = document.getElementById("modalLinks");
+
+    // Render Grid
+    function renderGrid(projects) {
+      projectGrid.innerHTML = projects.map(p => `
+        <article class="proj-card" data-category="${p.category}" id="project-${p.id}">
+          <div class="card-top">
+            <div class="card-meta-row">
+              <span class="card-index">[${p.index}/${projectsData.length}]</span>
+              <span class="card-category-badge">${p.categoryLabel}</span>
+            </div>
+            <h3 class="card-title">${p.title}</h3>
+            <div class="card-team">
+              <span class="pulse-dot ${p.hasLive ? '' : 'offline-dot'}" title="${p.hasLive ? 'Live Online' : 'Repo Build'}"></span>
+              <span>${p.team}</span>
+              ${!p.hasLive ? '<span style="font-family: var(--font-mono); font-size: 0.65rem; background: var(--swem-blue-light); border: 1px solid var(--swem-blue-border); color: var(--swem-blue-deep); padding: 1px 5px; border-radius: 3px; font-weight: 700;">REPO BUILD</span>' : ''}
+            </div>
+            <p class="card-abstract">${p.abstract}</p>
+          </div>
+
+          <div class="card-body">
+            <div>
+              <div class="section-label">Team Members (${p.members.length})</div>
+              <ul class="member-list">
+                ${p.members.map(m => `
+                  <li class="member-item">
+                    <span class="member-name" title="${m.name} (${m.username})">${m.name}</span>
+                    <span class="member-matric">${m.matric}</span>
+                  </li>
+                `).join('')}
+              </ul>
+            </div>
+
+            <div>
+              <div class="section-label">API & Technologies</div>
+              <div class="tech-tags">
+                <span class="tech-pill" style="background: var(--swem-blue-light); border-color: var(--swem-blue-border); font-weight: 700; color: var(--swem-blue-deep);">${p.api}</span>
+                ${p.tech.slice(0, 3).map(t => `<span class="tech-pill">${t}</span>`).join('')}
+              </div>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            ${p.hasLive ? `
+              <a href="${p.liveUrl}" target="_blank" rel="noreferrer" class="btn btn-live" title="Open Live Application">
+                <span>Live App</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            ` : `
+              <a href="${p.repoUrl}" target="_blank" rel="noreferrer" class="btn btn-live" style="background: var(--fut-navy-light);" title="View Source Repository">
+                <span>Inspect Repo</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            `}
+            <a href="${p.repoUrl}" target="_blank" rel="noreferrer" class="btn btn-repo" title="View Source Repository">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              <span>Code</span>
+            </a>
+            <button class="btn btn-detail" onclick="openAbstractModal(${p.id})" title="Read Full Academic Dossier">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            </button>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    // Render Table
+    function renderTable(projects) {
+      tableBody.innerHTML = projects.map(p => `
+        <tr>
+          <td style="font-family: var(--font-mono); font-weight: 700;">${p.index}</td>
+          <td>
+            <strong style="color: var(--fut-navy); display: block; font-size: 0.92rem;">${p.title}</strong>
+            <span style="font-size: 0.76rem; color: var(--ink-muted);">${p.api}</span>
+          </td>
+          <td>
+            <div style="font-weight: 700; color: var(--swem-green-deep);">${p.team}</div>
+            <div style="font-size: 0.76rem; color: var(--ink-secondary); max-width: 260px;">
+              ${p.members.map(m => `${m.name} (${m.matric})`).join(', ')}
+            </div>
+          </td>
+          <td><span class="card-category-badge">${p.categoryLabel}</span></td>
+          <td>
+            <div style="font-weight: 600; font-size: 0.8rem; color: var(--swem-blue-deep);">${p.api}</div>
+            <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--ink-muted);">${p.tech.join(', ')}</div>
+          </td>
+          <td>
+            <div style="display: flex; gap: 5px;">
+              ${p.hasLive ? `<a href="${p.liveUrl}" target="_blank" rel="noreferrer" class="btn btn-live" style="padding: 3px 8px; font-size: 0.72rem;">Live ↗</a>` : ''}
+              <a href="${p.repoUrl}" target="_blank" rel="noreferrer" class="btn btn-repo" style="padding: 3px 8px; font-size: 0.72rem;">Repo ↗</a>
+              <button class="btn btn-detail" onclick="openAbstractModal(${p.id})" style="padding: 3px 5px; font-size: 0.72rem;">Info</button>
+            </div>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    // Filter Logic
+    function applyFilters() {
+      const q = currentSearch.toLowerCase().trim();
+      const filtered = projectsData.filter(p => {
+        const matchesCat = currentCategory === "all" || p.category === currentCategory;
+        const matchesSearch = !q || (
+          p.title.toLowerCase().includes(q) ||
+          p.team.toLowerCase().includes(q) ||
+          p.abstract.toLowerCase().includes(q) ||
+          p.api.toLowerCase().includes(q) ||
+          p.tech.some(t => t.toLowerCase().includes(q)) ||
+          p.members.some(m => m.name.toLowerCase().includes(q) || m.matric.toLowerCase().includes(q) || (m.username && m.username.toLowerCase().includes(q)))
+        );
+        return matchesCat && matchesSearch;
+      });
+
+      resultsCount.textContent = `Showing ${filtered.length} of ${projectsData.length} projects`;
+
+      if (filtered.length === 0) {
+        projectGrid.style.display = "none";
+        document.getElementById("projectTableWrap").style.display = "none";
+        noResults.style.display = "block";
+      } else {
+        noResults.style.display = "none";
+        if (currentView === "grid") {
+          projectGrid.style.display = "grid";
+          document.getElementById("projectTableWrap").style.display = "none";
+          renderGrid(filtered);
+        } else {
+          projectGrid.style.display = "none";
+          document.getElementById("projectTableWrap").style.display = "block";
+          renderTable(filtered);
+        }
+      }
+    }
+
+    function filterCategory(category, el) {
+      currentCategory = category;
+      document.querySelectorAll(".pill-btn").forEach(btn => btn.classList.remove("active"));
+      if (el) el.classList.add("active");
+      applyFilters();
+    }
+
+    function setViewMode(mode) {
+      currentView = mode;
+      document.getElementById("btnGridView").classList.toggle("active", mode === "grid");
+      document.getElementById("btnTableView").classList.toggle("active", mode === "table");
+      applyFilters();
+    }
+
+    searchInput.addEventListener("input", (e) => {
+      currentSearch = e.target.value;
+      applyFilters();
+    });
+
+    function openAbstractModal(projectId) {
+      const p = projectsData.find(item => item.id === projectId);
+      if (!p) return;
+
+      modalTeam.textContent = `FUTM-SWE-221 • ${p.team.toUpperCase()} (#${p.index})`;
+      modalTitle.textContent = `${p.title}`;
+      
+      modalContent.innerHTML = `
+        <div class="modal-section">
+          <h4>Academic Specification & Abstract</h4>
+          <p>${p.abstract}</p>
+        </div>
+
+        <div class="modal-section">
+          <h4>API Integration & System Stack</h4>
+          <p>This project interfaces with <strong>${p.api}</strong> to retrieve and manipulate real-time structured data.</p>
+          <div class="tech-tags" style="margin-top: 10px;">
+            <span class="tech-pill" style="background: var(--swem-blue-light); border-color: var(--swem-blue-border); font-weight: 700; color: var(--swem-blue-deep);">API: ${p.api}</span>
+            ${p.tech.map(t => `<span class="tech-pill">${t}</span>`).join('')}
+          </div>
+        </div>
+
+        <div class="modal-section">
+          <h4>Student Engineering Roster (${p.members.length} Members)</h4>
+          <ul class="member-list" style="margin-top: 8px; max-height: 220px;">
+            ${p.members.map(m => `
+              <li class="member-item" style="padding: 6px 0; border-bottom: 1px dotted var(--line-subtle);">
+                <div>
+                  <strong style="color: var(--ink-primary); display: block; font-size: 0.88rem;">${m.name}</strong>
+                  <span style="font-size: 0.72rem; color: var(--ink-muted);">GitHub: @${m.username} • Role: ${m.role}</span>
+                </div>
+                <span class="member-matric">${m.matric}</span>
+              </li>
+            `).join('')}
+          </ul>
+        </div>
+      `;
+
+      modalLinks.innerHTML = `
+        ${p.hasLive ? `<a href="${p.liveUrl}" target="_blank" rel="noreferrer" class="btn btn-live">Launch Live Application ↗</a>` : ''}
+        <a href="${p.repoUrl}" target="_blank" rel="noreferrer" class="btn btn-repo">Source Repository ↗</a>
+      `;
+
+      abstractModal.classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal() {
+      abstractModal.classList.remove("open");
+      document.body.style.overflow = "auto";
+    }
+
+    function closeModalOnBackdrop(e) {
+      if (e.target === abstractModal) {
+        closeModal();
+      }
+    }
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && abstractModal.classList.contains("open")) {
+        closeModal();
+      }
+    });
+
+    // Initial Filter Render
+    applyFilters();
+  </script>
+</body>
+</html>
